@@ -1,1 +1,1 @@
-# quantum-optics-gerry-knight
+# quantum-optics-gerry-knight-chapter2
