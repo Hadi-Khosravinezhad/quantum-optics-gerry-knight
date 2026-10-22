@@ -1,51 +1,57 @@
+# Quantum Optics Simulations (Gerry & Knight)
+
+Interactive computational simulations of core concepts based on **"Introductory Quantum Optics" by Christopher C. Gerry and Sir Peter L. Knight**.
+
+---
+
 ### 1. Single-Mode Quantum Field Fluctuations & Vacuum Noise
-**Reference:** Gerry & Knight, *Introductory Quantum Optics*, Section 2.2 (Eqs. 2.22 – 2.26)
+**Reference:** Chapter 2 (*Field Quantization*), Section 2.2: *Quantum Fluctuations of a Single-Mode Field*
 
 #### The Physics & Mathematics
-In classical optics, the electric field of an empty cavity is identically zero. In quantum optics, the single-mode field operator inside a 1D cavity along the $z$-axis is:
-$$\hat{E}_x(z, t) = 2 \mathcal{E}_0 \hat{X}_1 \sin(kz) \cos(\omega t) + 2 \mathcal{E}_0 \hat{X}_2 \sin(kz) \sin(\omega t)$$
+In classical optics, an empty cavity contains no energy and the electric field is strictly zero everywhere. In quantum optics, the quantized electric field operator inside a single-mode 1D cavity along the $z$-axis is:
+$$\hat{E}_x(z, t) = \mathcal{E}_0 \left(\hat{a} e^{-i\omega t} + \hat{a}^\dagger e^{i\omega t}\right) \sin(kz)$$
 
-For any photon number state (Fock state $|n\rangle$):
-- **Mean field is zero:** $\langle n | \hat{E}_x(z, t) | n \rangle = 0$
-- **Field variance is non-zero:**
+For a photon number state (Fock state $|n\rangle$):
+- **Expectation value is identically zero:**
+  $$\langle n | \hat{E}_x(z, t) | n \rangle = 0$$
+- **Field variance (quantum fluctuation envelope) is non-vanishing:**
   $$\Delta E_x(z) = \sqrt{\langle \hat{E}_x^2 \rangle - \langle \hat{E}_x \rangle^2} = 2 \mathcal{E}_0 \sqrt{n + \frac{1}{2}} |\sin(kz)|$$
 
-Even for the vacuum state ($n = 0$), the zero-point energy induces non-vanishing vacuum fluctuations:
+For the vacuum state ($n = 0$), the zero-point energy yields an irreducible vacuum noise:
 $$\Delta E_{\text{vac}}(z) = \sqrt{2} \mathcal{E}_0 |\sin(kz)|$$
 
 #### Simulation Output
 ![Quantum Field Fluctuations](figures/sim1_field_fluctuations.png)
 
 #### Physical Interpretation
-1. **Uncertainty Envelope:** Although the classical average field is zero everywhere, there exists a standing-wave "uncertainty band". The quantum field constantly fluctuates around zero with an amplitude proportional to $\sqrt{n + 1/2}$.
-2. **Vacuum Noise:** Even in complete darkness ($|0\rangle$), the field variance does not drop to zero. This zero-point fluctuation is purely quantum mechanical and has no classical counterpart.
-
+1. **Uncertainty Envelope:** Even though the classical expectation value of the field is zero, there exists a standing-wave uncertainty envelope of amplitude $2 \mathcal{E}_0 \sqrt{n + 1/2}$.
+2. **Vacuum Fluctuations:** In absolute darkness ($|0\rangle$), the field variance does not vanish. These vacuum fluctuations are responsible for spontaneous emission, the Lamb shift, and the Casimir effect.
 
 ---
 
 ### 2. Quadrature Operators & Phase Space Uncertainty Disks
-**Reference:** Gerry & Knight, *Introductory Quantum Optics*, Section 2.3 (Eqs. 2.30 – 2.45)
+**Reference:** Chapter 2 (*Field Quantization*), Section 2.3: *Quadrature Operators for a Single-Mode Field*
 
 #### The Physics & Mathematics
-The non-Hermitian photon annihilation and creation operators ($\hat{a}, \hat{a}^\dagger$) can be decomposed into two dimensionless, Hermitian quadrature operators representing the real (in-phase) and imaginary (out-of-phase) components of the field:
+The non-Hermitian creation and annihilation operators ($\hat{a}, \hat{a}^\dagger$) can be decomposed into two dimensionless, Hermitian quadrature operators:
 $$\hat{X}_1 = \frac{1}{2}(\hat{a} + \hat{a}^\dagger), \quad \hat{X}_2 = \frac{1}{2i}(\hat{a} - \hat{a}^\dagger)$$
 
-These operators satisfy the commutation relation $[\hat{X}_1, \hat{X}_2] = \frac{i}{2}$, which leads directly to the Heisenberg uncertainty relation:
+These operators satisfy the commutation relation $[\hat{X}_1, \hat{X}_2] = \frac{i}{2}$, imposing the Heisenberg uncertainty relation:
 $$\Delta X_1 \Delta X_2 \ge \frac{1}{4}$$
 
-For a Fock state $|n\rangle$:
+For any Fock state $|n\rangle$:
 - **Mean values vanish:** $\langle n | \hat{X}_1 | n \rangle = \langle n | \hat{X}_2 | n \rangle = 0$
-- **Quadrature variances are equal and isotropic:**
+- **Isotropic fluctuations:**
   $$\Delta X_1 = \Delta X_2 = \sqrt{\frac{2n + 1}{4}}$$
 - **Uncertainty product:**
   $$\Delta X_1 \Delta X_2 = \frac{2n + 1}{4}$$
 
-For the vacuum state ($n = 0$), the equality holds ($\Delta X_1 \Delta X_2 = 1/4$), meaning the **vacuum is a minimum-uncertainty state**.
+The ground state (vacuum $|0\rangle$) achieves the minimum uncertainty bound: $\Delta X_1 \Delta X_2 = 1/4$.
 
 #### Simulation Output
 ![Quadrature Phase Space](figures/sim2_quadrature_phase_space.png)
 
 #### Physical Interpretation
-1. **Symmetric Vacuum Disk:** The ground state $|0\rangle$ occupies a symmetric, circular area in phase space with radius $\Delta X = 1/2$. It represents the irreducible quantum noise floor.
-2. **Complete Phase Indeterminacy:** For number states ($|n \ge 1\rangle$), the exact photon number is known ($\Delta n = 0$), but according to the number-phase complementarity, the phase is completely random ($[0, 2\pi]$). This renders each state as a symmetric circular annulus (doughnut) of mean radius $\sqrt{n}$ centered at the origin.
-3. **Linear Growth of Uncertainty:** As the photon number $n$ increases, the area of uncertainty in phase space expands linearly with $n$.
+1. **Minimum Uncertainty Vacuum Disk:** The ground state $|0\rangle$ is an isotropic circle of radius $1/2$ at the origin, setting the fundamental quantum noise floor.
+2. **Phase Indeterminacy of Fock States:** A state with a well-defined photon number ($\Delta n = 0$) has a completely undefined phase ($\phi \in [0, 2\pi)$). Consequently, Fock states appear in phase space as concentric annular rings centered at radius $\sqrt{n}$.
+3. **Linear Uncertainty Growth:** The uncertainty area in phase space grows linearly with photon number $n$.
