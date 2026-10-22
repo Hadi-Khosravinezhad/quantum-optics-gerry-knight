@@ -1,4 +1,4 @@
-# Quantum Optics Simulations (Gerry & Knight)
+# Quantum Optics Simulations (Gerry & Knight) Chapter2
 
 Interactive computational simulations of core concepts based on **"Introductory Quantum Optics" by Christopher C. Gerry and Sir Peter L. Knight**.
 
