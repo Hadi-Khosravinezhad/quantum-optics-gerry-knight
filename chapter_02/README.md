@@ -138,7 +138,7 @@ $$(\Delta n)^2 = \langle \hat{n}^2 \rangle - \langle \hat{n} \rangle^2 = \bar{n}
   * **Red Solid Curve (Thermal):** Quadratic relation $(\Delta n)^2 = \bar{n} + \bar{n}^2$.
   * **Shaded Region (Excess Wave Noise):** Highlights the quadratic excess noise $\bar{n}^2$ responsible for the Hanbury Brown–Twiss effect (photon bunching).
  
-  * ---
+   ---
 
 ### 4. Zero-Point Energy & Casimir Effect Regularization
 **Reference:** Chapter 2 (*Field Quantization*), Section 2.6: *Vacuum Fluctuations and the Zero-Point Energy*
