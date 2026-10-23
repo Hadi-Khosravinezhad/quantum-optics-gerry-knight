@@ -85,6 +85,8 @@ For the vacuum state ($n = 0$), the equality holds ($\Delta X_1 \Delta X_2 = 1/4
  
   * ---
 
+---
+
 ### 3. Photon Number Statistics: Thermal Fields vs. Coherent States
 **Reference:** Chapter 2 (*Field Quantization*), Section 2.5: *Thermal Fields*
 
@@ -123,8 +125,3 @@ $$(\Delta n)^2 = \langle \hat{n}^2 \rangle - \langle \hat{n} \rangle^2 = \bar{n}
   * **Blue Dashed Line (Coherent / Shot Noise):** Linear relation $(\Delta n)^2 = \bar{n}$.
   * **Red Solid Curve (Thermal):** Quadratic relation $(\Delta n)^2 = \bar{n} + \bar{n}^2$.
   * **Shaded Region (Excess Wave Noise):** Highlights the quadratic excess noise $\bar{n}^2$ responsible for the Hanbury Brown–Twiss effect (photon bunching).
-
-* **Subplot (b) — Quadrature Uncertainty Product:**
-  * **Black Dashed Line ($1/4$):** The lower quantum bound enforced by Heisenberg's uncertainty principle ($\Delta X_1 \Delta X_2 \ge 1/4$).
-  * **Blue Point ($n=0$):** The vacuum state touches the lower bound exactly, validating its status as a minimum-uncertainty state.
-  * **Purple Line ($n \ge 1$):** Number states with $n \ge 1$ are *not* minimum-uncertainty states; their phase-space uncertainty area scales linearly with photon number as $\frac{2n+1}{4}$.
