@@ -92,7 +92,16 @@ For the vacuum state ($n = 0$), the equality holds ($\Delta X_1 \Delta X_2 = 1/4
 
 #### The Physics & Mathematics
 A single-mode field in thermal equilibrium with a heat reservoir at temperature $T$ is in a statistical mixture described by the thermal density operator:
-$$\hat{\rho}_{\text{th}} = \frac{e^{-\hat{H}/k_B T}}{\text{Tr}\left[e^{-\hat{H}/k_B T}\right]} = \sum_{n=0}^{\infty} P_n |n\rangle \langle n|$$
+
+$$
+\hat{\rho}_{\mathrm{th}} = \frac{e^{-\hat{H}/k_B T}}{\mathrm{Tr}\left[e^{-\hat{H}/k_B T}\right]} = \sum_{n=0}^{\infty} P_n |n\rangle \langle n|
+$$
+
+where $\hat{H} = \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1}{2}\right)$. The average photon number is given by Planck's distribution:
+
+$$
+\bar{n} = \langle \hat{n} \rangle = \frac{1}{e^{\hbar \omega / k_B T} - 1}
+$$
 
 where $\hat{H} = \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1}{2}\right)$. The average photon number is given by Planck's distribution:
 $$\bar{n} = \langle \hat{n} \rangle = \frac{1}{e^{\hbar \omega / k_B T} - 1}$$
