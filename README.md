@@ -11,7 +11,7 @@ All interactive implementations are developed in Python / Jupyter Notebooks, des
 
 - [x] [**Chapter 2: Field Quantization**](chapter_02/)
   - **Sim 01:** Single-Mode Quantum Field Fluctuations & Vacuum Noise (Sec. 2.2)
-  - **Sim 02:** Quadrature Operators & Uncertainty Disks in Phase Space (Sec. 2.3)
+  - **Sim 02:** Quadrature operators for a single-modefield (Sec. 2.3)
   - **Sim 03:** Thermal Light Statistics (Bose-Einstein) vs. Coherent States (Sec. 2.5)
   - **Sim 04:** Vacuum Zero-Point Energy & Casimir Force Regularization (Sec. 2.6)
 - [ ] **Chapter 3: Coherent States of Light** *(Upcoming)*
