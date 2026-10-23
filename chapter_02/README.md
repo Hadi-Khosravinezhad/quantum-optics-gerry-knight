@@ -134,3 +134,55 @@ $$(\Delta n)^2 = \langle \hat{n}^2 \rangle - \langle \hat{n} \rangle^2 = \bar{n}
   * **Blue Dashed Line (Coherent / Shot Noise):** Linear relation $(\Delta n)^2 = \bar{n}$.
   * **Red Solid Curve (Thermal):** Quadratic relation $(\Delta n)^2 = \bar{n} + \bar{n}^2$.
   * **Shaded Region (Excess Wave Noise):** Highlights the quadratic excess noise $\bar{n}^2$ responsible for the Hanbury Brown–Twiss effect (photon bunching).
+ 
+  * ---
+
+### 4. Zero-Point Energy & Casimir Effect Regularization
+**Reference:** Chapter 2 (*Field Quantization*), Section 2.6: *Vacuum Fluctuations and the Zero-Point Energy*
+
+#### The Physics & Mathematics
+The zero-point energy of the quantized electromagnetic field is obtained by summing $\frac{1}{2}\hbar \omega$ over all allowed spatial modes. For two parallel, perfectly conducting uncharged plates of area $A$ separated by distance $d$:
+
+- **Inside the cavity:** The conducting boundary conditions discretize the wavevector component normal to the plates: $k_z = \frac{n \pi}{d}$ ($n = 1, 2, 3, \dots$).
+- **Outside the cavity:** The modes form a continuous spectrum.
+
+The difference in zero-point energy between the bounded cavity and an equivalent volume of free space is formally infinite:
+
+$$
+\Delta E_0(d) = \hbar c A \left[ \sum_{n=1}^{\infty} \int \frac{d^2 k_{\perp}}{(2\pi)^2} \sqrt{k_{\perp}^2 + \left(\frac{n\pi}{d}\right)^2} - \int_0^{\infty} dn \int \frac{d^2 k_{\perp}}{(2\pi)^2} \sqrt{k_{\perp}^2 + \left(\frac{n\pi}{d}\right)^2} \right]
+$$
+
+To extract the physical, measurable energy, a high-frequency exponential cutoff factor $e^{-\lambda \omega}$ ($\lambda \to 0$) is introduced. Applying the **Euler-Maclaurin summation formula**:
+
+$$
+\sum_{n=1}^{\infty} F(n) - \int_0^{\infty} F(n) \, dn = -\frac{1}{12} F'(0) + \frac{1}{720} F'''(0) - \dots
+$$
+
+The divergent terms proportional to $\lambda^{-4}$ and $\lambda^{-2}$ cancel out identically, leaving a finite, negative regularized energy:
+
+$$
+\frac{\Delta E_0(d)}{A} = -\frac{\pi^2 \hbar c}{720 \, d^3}
+$$
+
+Differentiating with respect to the separation $d$ yields an attractive **Casimir force per unit area (Casimir pressure)**:
+
+$$
+P_{\mathrm{Casimir}} = \frac{F}{A} = -\frac{\partial}{\partial d}\left(\frac{\Delta E_0}{A}\right) = -\frac{\pi^2 \hbar c}{240 \, d^4}
+$$
+
+#### Simulation Output
+![Casimir Effect](figures/sim4_casimir_effect.png)
+
+#### Detailed Plot Guide & Analysis
+* **Subplot (a) — Numerical Demonstration of Mode Regularization:**
+  * **X-Axis ($\lambda$):** Soft high-frequency cutoff parameter. The physical limit corresponds to $\lambda \to 0$ (all high-frequency vacuum modes restored).
+  * **Y-Axis:** Numerical difference between the discrete cavity mode sum and the continuous free-space integral.
+  * **Blue Curve:** Evaluates the mode difference numerically across different cutoff values.
+  * **Red Dashed Line ($-\frac{1}{120} \approx -0.00833$):** The exact residue predicted by the Euler-Maclaurin formula. As $\lambda \to 0$, the numerical sum converges precisely to this universal finite constant, demonstrating that the infinite zero-point energy contains a well-defined, observable physical difference.
+* **Subplot (b) — Casimir Pressure vs. Plate Separation:**
+  * **X-Axis ($d$):** Plate separation distance on a logarithmic scale from $10\,\mathrm{nm}$ to $1000\,\mathrm{nm}$ ($1\,\mu\mathrm{m}$).
+  * **Y-Axis ($|F/A|$):** Absolute attractive pressure in Pascals ($\mathrm{N/m^2}$) on a logarithmic scale.
+  * **Power Law Scaling ($1/d^4$):** Because of the quartic inverse power law, the force drops precipitously with distance (a slope of $-4$ on the log-log plot).
+  * **Macroscopic Impact at the Nanoscale:**
+    * At $d = 100\,\mathrm{nm}$, the pressure is approximately $13\,\mathrm{Pa}$.
+    * At $d = 10\,\mathrm{nm}$, the quantum pressure surges to over $1.3 \times 10^5\,\mathrm{Pa}$ (greater than **$1.3$ atmospheres**!). This quantum mechanical force is large enough to cause "stiction" (spontaneous sticking) in Micro- and Nano-Electro-Mechanical Systems (MEMS/NEMS).
