@@ -82,6 +82,47 @@ For the vacuum state ($n = 0$), the equality holds ($\Delta X_1 \Delta X_2 = 1/4
     * Why rings? In a Fock state, the photon number $n$ is known with zero uncertainty ($\Delta n = 0$). By the quantum number-phase complementarity, its optical phase $\phi$ is completely undefined and uniformly distributed over $[0, 2\pi)$.
     * The ring has mean radius $\sqrt{n}$, and its radial thickness matches the quantum quadrature noise.
   * **Phase Symmetry:** All states are strictly rotationally symmetric around $(0,0)$, confirming that number states carry no preferred optical phase.
+ 
+  * ---
+
+### 3. Photon Number Statistics: Thermal Fields vs. Coherent States
+**Reference:** Chapter 2 (*Field Quantization*), Section 2.5: *Thermal Fields*
+
+#### The Physics & Mathematics
+A single-mode field in thermal equilibrium with a heat reservoir at temperature $T$ is in a statistical mixture described by the thermal density operator:
+$$\hat{\rho}_{\text{th}} = \frac{e^{-\hat{H}/k_B T}}{\text{Tr}\left[e^{-\hat{H}/k_B T}\right]} = \sum_{n=0}^{\infty} P_n |n\rangle \langle n|$$
+
+where $\hat{H} = \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1}{2}\right)$. The average photon number is given by Planck's distribution:
+$$\bar{n} = \langle \hat{n} \rangle = \frac{1}{e^{\hbar \omega / k_B T} - 1}$$
+
+The probability distribution of finding exactly $n$ photons in the mode follows the **Bose-Einstein distribution**:
+$$P_n = \frac{1}{1 + \bar{n}} \left(\frac{\bar{n}}{1 + \bar{n}}\right)^n = \frac{\bar{n}^n}{(1 + \bar{n})^{n+1}}$$
+
+The photon number variance exhibits an essential difference compared to coherent light:
+$$(\Delta n)^2 = \langle \hat{n}^2 \rangle - \langle \hat{n} \rangle^2 = \bar{n} + \bar{n}^2$$
+
+- **$\bar{n}$ (Shot noise / Particle nature):** The standard quantum Poissonian noise.
+- **$\bar{n}^2$ (Wave noise / Photon bunching):** Extra intensity fluctuations arising from interference between random thermal wave packets. Because $(\Delta n)^2 > \bar{n}$, thermal light is strictly **super-Poissonian**.
+
+#### Simulation Output
+![Thermal Photon Statistics](figures/sim3_thermal_photon_statistics.png)
+
+#### Detailed Plot Guide & Analysis
+* **Subplot (a) — Thermal Distributions ($P_n$ vs. $n$):**
+  * **X-Axis ($n$):** Discrete photon number ($0, 1, 2, \dots$).
+  * **Y-Axis ($P_n$):** Probability of measuring $n$ photons.
+  * **Exponential Decay Profile:** Notice that for any temperature (any $\bar{n}$), the curve decays monotonically. 
+  * **The Zero-Photon Paradox:** The most probable photon number in thermal light is **always zero** ($P_0 = \frac{1}{1+\bar{n}} > P_n$ for all $n \ge 1$), even when the average photon number is large (e.g., $\bar{n} = 6$).
+* **Subplot (b) — Thermal vs. Coherent Light ($\bar{n} = 5$):**
+  * **Red Bars (Thermal Light):** Shows maximum probability at $n=0$ and drops monotonically. Photons arrive in bunches.
+  * **Blue Bars (Coherent / Laser Light):** Follows a Poissonian distribution peaked around the mean ($n \approx \bar{n} = 5$). Photons arrive independently with no correlations.
+  * **Contrast:** While a laser produces a predictable amplitude with a well-defined Poisson peak, thermal light has massive fluctuations around zero.
+* **Subplot (c) — Photon Number Variance (Super-Poissonian Noise):**
+  * **X-Axis ($\bar{n}$):** Mean photon number.
+  * **Y-Axis ($(\Delta n)^2$):** Photon number variance.
+  * **Blue Dashed Line (Coherent / Shot Noise):** Linear relation $(\Delta n)^2 = \bar{n}$.
+  * **Red Solid Curve (Thermal):** Quadratic relation $(\Delta n)^2 = \bar{n} + \bar{n}^2$.
+  * **Shaded Region (Excess Wave Noise):** Highlights the quadratic excess noise $\bar{n}^2$ responsible for the Hanbury Brown–Twiss effect (photon bunching).
 
 * **Subplot (b) — Quadrature Uncertainty Product:**
   * **Black Dashed Line ($1/4$):** The lower quantum bound enforced by Heisenberg's uncertainty principle ($\Delta X_1 \Delta X_2 \ge 1/4$).
