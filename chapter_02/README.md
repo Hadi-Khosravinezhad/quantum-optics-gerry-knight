@@ -8,7 +8,7 @@ Based on **"Introductory Quantum Optics" by Christopher C. Gerry and Sir Peter L
 This folder contains computational models and phase-space representations illustrating the quantum nature of single-mode electromagnetic fields inside an optical cavity.
 
 - [x] **1. Single-Mode Quantum Field Fluctuations & Vacuum Noise** (Sec. 2.2)
-- [x] **2. Quadrature Operators & Phase Space Uncertainty Disks** (Sec. 2.3)
+- [x] **2. Quadrature operators for a single-modefield** (Sec. 2.3)
 - [ ] **3. Photon Number Statistics: Thermal vs. Coherent Light** (Sec. 2.5) *(Next)*
 - [ ] **4. Zero-Point Energy & Casimir Effect Regularization** (Sec. 2.6) *(Next)*
 
