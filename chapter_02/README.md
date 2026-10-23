@@ -83,7 +83,7 @@ For the vacuum state ($n = 0$), the equality holds ($\Delta X_1 \Delta X_2 = 1/4
     * The ring has mean radius $\sqrt{n}$, and its radial thickness matches the quantum quadrature noise.
   * **Phase Symmetry:** All states are strictly rotationally symmetric around $(0,0)$, confirming that number states carry no preferred optical phase.
  
-  * ---
+  
 
 ---
 
@@ -103,8 +103,6 @@ $$
 \bar{n} = \langle \hat{n} \rangle = \frac{1}{e^{\hbar \omega / k_B T} - 1}
 $$
 
-where $\hat{H} = \hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1}{2}\right)$. The average photon number is given by Planck's distribution:
-$$\bar{n} = \langle \hat{n} \rangle = \frac{1}{e^{\hbar \omega / k_B T} - 1}$$
 
 The probability distribution of finding exactly $n$ photons in the mode follows the **Bose-Einstein distribution**:
 $$P_n = \frac{1}{1 + \bar{n}} \left(\frac{\bar{n}}{1 + \bar{n}}\right)^n = \frac{\bar{n}^n}{(1 + \bar{n})^{n+1}}$$
