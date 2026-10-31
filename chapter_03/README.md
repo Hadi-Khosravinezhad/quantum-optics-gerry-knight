@@ -1,3 +1,20 @@
+# Chapter 3: Coherent States of Light
+### Numerical Simulations & Visual Interpretations
+Based on **"Introductory Quantum Optics" by Christopher C. Gerry and Sir Peter L. Knight**, Chapter 3: *Coherent States*.
+
+---
+
+## 📌 Chapter Overview
+This folder contains computational models, phase-space visualizations, and statistical analyses illustrating the quasi-classical nature, quantum non-orthogonality, and phase-space representations of Glauber coherent states.
+
+- **1. Classical Limit & Electric Field Dynamics with Quantum Noise Tube** (Sec. 3.1 & 3.5)
+- **2. Photon Number Statistics & Mandel Q-Parameter** (Sec. 3.2)
+- **3. Quantum Non-Orthogonality & Overcompleteness in Phase Space** (Sec. 3.2)
+- **4. Phase-Space Quasi-Probability Distributions: Husimi Q, Wigner W & Schrödinger Cat** (Sec. 3.3 & 3.6)
+
+---
+
+
 ### 1. Classical Limit & Electric Field Dynamics with Quantum Noise Tube
 **Reference:** Chapter 3 (*Coherent States*), Section 3.1 (*The Displacement Operator and Coherent States*) & Section 3.5 (*Time Evolution of Coherent States*)
 
