@@ -112,9 +112,9 @@ $$P_n \approx \frac{1}{\sqrt{2\pi \bar{n}}} \exp\left[ -\frac{(n - \bar{n})^2}{2
   * **Light Green Zone ($Q < 0$):** The forbidden classical region populated exclusively by non-classical states. The dotted green line at $Q = -1$ marks the absolute lower bound achieved by number states $|n\rangle$.
   * **Misty Rose Zone ($Q > 0$):** The classical super-Poissonian domain. The solid firebrick curve illustrates how thermal wave noise scales linearly ($Q = \bar{n}$), drifting rapidly away from Poissonian coherence.
  
-  --- 
+ --- 
  
-  * ### 3. Quantum Non-Orthogonality & Overcompleteness in Phase Space
+   ### 3. Quantum Non-Orthogonality & Overcompleteness in Phase Space
 **Reference:** Chapter 3 (*Coherent States*), Section 3.2: *Properties of Coherent States*
 
 #### The Physics & Mathematics
