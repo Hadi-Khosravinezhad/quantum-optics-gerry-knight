@@ -10,7 +10,7 @@ This folder contains computational models and phase-space representations illust
 -  **1. Single-Mode Quantum Field Fluctuations & Vacuum Noise** (Sec. 2.2)
 -  **2. Quadrature operators for a single-modefield** (Sec. 2.3)
 -  **3. Photon Number Statistics: Thermal vs. Coherent Light** (Sec. 2.5) 
--  **4. Zero-Point Energy & Casimir Effect Regularization** (Sec. 2.6) *(Next)*
+-  **4. Zero-Point Energy & Casimir Effect Regularization** (Sec. 2.6) 
 
 ---
 
