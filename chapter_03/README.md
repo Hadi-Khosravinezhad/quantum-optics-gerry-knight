@@ -56,9 +56,9 @@ As the average photon number grows, the quantum fuzziness becomes an utterly neg
   * **Crimson Curve & Lightcoral Band:** As the excitation increases to $25$ photons, the field amplitude surges ($E_{\text{peak}} = 10\mathcal{E}_0$) while the uncertainty band remains pinned at $\pm \mathcal{E}_0$.
   * **Black Trajectory:** Individual measurement noise is now visibly constrained close to the classical trajectory, demonstrating how macroscopically stable laser fields emerge from microscopic photons.
  
-  * ---
+   ---
  
-   ### 2. Photon Number Statistics & Mandel Q-Parameter
+  ### 2. Photon Number Statistics & Mandel Q-Parameter
 **Reference:** Chapter 3 (*Coherent States*), Section 3.2: *Properties of Coherent States*
 
 #### The Physics & Mathematics
