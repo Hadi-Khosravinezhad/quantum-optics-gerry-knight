@@ -110,4 +110,47 @@ $$P_n \approx \frac{1}{\sqrt{2\pi \bar{n}}} \exp\left[ -\frac{(n - \bar{n})^2}{2
 * **Subplot (c) — Mandel $Q$-Parameter Classification:**
   * **Horizontal Navy Dashed Line ($Q = 0$):** Identifies coherent light as the universal benchmark boundary between classical and quantum optics.
   * **Light Green Zone ($Q < 0$):** The forbidden classical region populated exclusively by non-classical states. The dotted green line at $Q = -1$ marks the absolute lower bound achieved by number states $|n\rangle$.
-  * **Misty Rose Zone ($Q > 0$):** The classical super-Poissonian domain. The solid firebrick curve illustrates how thermal wave noise scales linearly ($Q = \bar{n}$), drifting rapidly away from Poissonian coherence.    
+  * **Misty Rose Zone ($Q > 0$):** The classical super-Poissonian domain. The solid firebrick curve illustrates how thermal wave noise scales linearly ($Q = \bar{n}$), drifting rapidly away from Poissonian coherence.
+ 
+  --- 
+ 
+  * ### 3. Quantum Non-Orthogonality & Overcompleteness in Phase Space
+**Reference:** Chapter 3 (*Coherent States*), Section 3.2: *Properties of Coherent States*
+
+#### The Physics & Mathematics
+Unlike the discrete, mutually orthogonal Fock basis ($\langle m | n \rangle = \delta_{mn}$), coherent states are **never strictly orthogonal**. Using their Fock expansions, the inner product between two arbitrary coherent states $|\alpha\rangle$ and $|\beta\rangle$ is:
+
+$$\langle \beta | \alpha \rangle = e^{-\frac{1}{2}(|\alpha|^2 + |\beta|^2)} \sum_{n=0}^{\infty} \frac{(\beta^* \alpha)^n}{n!} = \exp\left[ -\frac{1}{2}(|\alpha|^2 + |\beta|^2) + \beta^* \alpha \right]$$
+
+The transition probability (quantum overlap fidelity) is given by:
+
+$$|\langle \beta | \alpha \rangle|^2 = \exp\left( -|\alpha - \beta|^2 \right)$$
+
+##### Key Physical Consequences:
+1. **Fundamental Non-Orthogonality:** Because $|\langle \beta | \alpha \rangle|^2 > 0$ for any finite complex amplitudes $\alpha$ and $\beta$, no quantum measurement can discriminate between two coherent states with $100\%$ determinism. This non-orthogonality constitutes the physical foundation of continuous-variable quantum key distribution (CV-QKD) and the B92 protocol.
+2. **Quasi-Orthogonality:** The overlap decays exponentially with the squared Euclidean distance in phase space ($d^2 = |\alpha - \beta|^2$). When the separation satisfies $|\alpha - \beta| \ge 3$, the overlap falls below $e^{-9} \approx 1.23 \times 10^{-4}$, rendering the states practically distinguishable.
+3. **Overcompleteness & Resolution of the Identity:**  
+   Because coherent states are non-orthogonal, they form an overcomplete basis set. The resolution of the identity operator is expressed as an integral over the entire complex plane:
+
+$$\frac{1}{\pi} \int |\alpha\rangle\langle \alpha| \, d^2\alpha = \hat{\mathbb{I}}$$
+
+where $d^2\alpha = d(\mathrm{Re}\,\alpha) \, d(\mathrm{Im}\,\alpha)$. Any quantum state can be expanded in coherent states, although the expansion is non-unique.
+
+Projecting an arbitrary Fock state $|n\rangle$ onto this identity resolution within a bounded circular disk of radius $R$ in phase space yields:
+
+$$\langle n | \hat{\mathbb{I}}_R | n \rangle = \frac{1}{\pi} \int_{|\alpha| \le R} |\langle \alpha | n \rangle|^2 \, d^2\alpha = 1 - e^{-R^2} \sum_{k=0}^{n} \frac{R^{2k}}{k!} \longrightarrow 1 \quad (R \to \infty)$$
+
+#### Simulation Output
+![Quantum Non-Orthogonality](figures/sim03_non_orthogonality_overcompleteness.png)
+
+#### Detailed Plot Guide & Analysis
+* **Subplot (a) — Overlap Fidelity in Complex $\beta$-Plane:**
+  * **2D Color Gradient:** Evaluates the transition probability $|\langle \beta | \alpha_0 \rangle|^2$ for a target coherent state $\alpha_0 = 2 + 2i$.
+  * **Red Dashed Circle ($|\Delta \alpha| = 1$):** Marks the $e^{-1} \approx 0.368$ contour. The overlap is isotropic, forming a symmetric 2D Gaussian bell centered at $\alpha_0$.
+* **Subplot (b) — Exponential Overlap Decay vs. Phase-Space Distance:**
+  * **Navy Curve:** Evaluates $|\langle \beta | \alpha \rangle|^2 = e^{-d^2}$ against the separation distance $d = |\alpha - \beta|$.
+  * **Marker $d = 1$:** States separated by one unit have a substantial quantum overlap ($36.8\%$), forbidding error-free discrimination.
+  * **Marker $d = 2$:** The overlap drops sharply to $1.8\%$. For $d \ge 3$, the overlap vanishes to $<0.01\%$, entering the quasi-orthogonal macroscopic regime.
+* **Subplot (c) — Numerical Demonstration of Completeness:**
+  * **Convergence Curves:** Evaluates the completeness integral $\langle n | \hat{\mathbb{I}}_R | n \rangle$ as a function of the phase-space integration radius $R$ for target Fock states $|0\rangle$, $|1\rangle$, and $|2\rangle$.
+  * **Black Dashed Line ($\hat{\mathbb{I}} = 1.0$):** Demonstrates that as $R \ge 3$, the integral rapidly saturates to unity, providing rigorous numerical proof that coherent states span the complete Hilbert space.  
