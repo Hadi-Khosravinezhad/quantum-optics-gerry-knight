@@ -149,7 +149,7 @@ $$\langle n | \hat{\mathbb{I}}_R | n \rangle = \frac{1}{\pi} \int_{|\alpha| \le 
   * **Red Dashed Circle ($|\Delta \alpha| = 1$):** Marks the $e^{-1} \approx 0.368$ contour. The overlap is isotropic, forming a symmetric 2D Gaussian bell centered at $\alpha_0$.
 * **Subplot (b) — Exponential Overlap Decay vs. Phase-Space Distance:**
   * **Navy Curve:** Evaluates $|\langle \beta | \alpha \rangle|^2 = e^{-d^2}$ against the separation distance $d = |\alpha - \beta|$.
-  * **Marker $d = 1$:** States separated by one unit have a substantial quantum overlap ($36.8\%$), forbidding error-free discrimination.
+  * **Marker $d = 1$:** States separated by one unit have a substantial quantum overlap, forbidding error-free discrimination.
   * **Marker $d = 2$:** The overlap drops sharply to $1.8\%$. For $d \ge 3$, the overlap vanishes to $<0.01\%$, entering the quasi-orthogonal macroscopic regime.
 * **Subplot (c) — Numerical Demonstration of Completeness:**
   * **Convergence Curves:** Evaluates the completeness integral $\langle n | \hat{\mathbb{I}}_R | n \rangle$ as a function of the phase-space integration radius $R$ for target Fock states $|0\rangle$, $|1\rangle$, and $|2\rangle$.
