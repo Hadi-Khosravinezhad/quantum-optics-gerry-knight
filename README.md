@@ -15,10 +15,10 @@ All interactive implementations are developed in Python / Jupyter Notebooks, des
   - **Sim 03:** Thermal Light Statistics (Bose-Einstein) vs. Coherent States (Sec. 2.5)
   - **Sim 04:** Vacuum Zero-Point Energy & Casimir Force Regularization (Sec. 2.6)
 - [x] [**Chapter 3: Coherent States of Light**](chapter_03/)
-  - **Sim 01:** Classical Limit & Electric Field Dynamics with Quantum Noise Tube** (Sec. 3.3)
-  - **Sim 02:** Photon Number Statistics & Mandel Q-Parameter** (Sec. 3.1)
-  - **Sim 03:** Quantum Non-Orthogonality & Overcompleteness in Phase Space** (Sec. 3.5)
-  - **Sim 04:** Phase-Space Quasi-Probability Distributions: Husimi Q, Wigner W & Schrödinger Cat** (Sec. 3.6 & 3.7)
+  - **Sim 01:** Classical Limit & Electric Field Dynamics with Quantum Noise Tube (Sec. 3.3)
+  - **Sim 02:** Photon Number Statistics & Mandel Q-Parameter (Sec. 3.1)
+  - **Sim 03:** Quantum Non-Orthogonality & Overcompleteness in Phase Space (Sec. 3.5)
+  - **Sim 04:** Phase-Space Quasi-Probability Distributions: Husimi Q, Wigner W & Schrödinger Cat (Sec. 3.6 & 3.7)
 - [ ] **Chapter 4: Squeezed States of Light** *(Upcoming)*
   - Squeeze operator, quadrature variance reduction below the vacuum level.
 - [ ] **Chapter 5: Resonant Light-Atom Interactions** *(Upcoming)*
