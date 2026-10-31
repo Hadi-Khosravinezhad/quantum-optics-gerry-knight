@@ -21,13 +21,11 @@ $$\langle \hat{E}^2(t) \rangle = \langle \hat{E}(t) \rangle^2 + \mathcal{E}_0^2 
 ##### Key Physical Takeaways:
 1. **Constant Quantum Noise Tube:** Unlike squeezed states, the quantum uncertainty $\Delta E = \mathcal{E}_0$ of a coherent state is **strictly constant in time** and completely independent of the photon excitation number $\bar{n} = |\alpha|^2$. It maintains the identical zero-point noise floor of the vacuum state.
 2. **The Classical Limit (Bohr's Correspondence Principle):**  
-   The peak electric field amplitude is $E_{\text{peak}} = 2 \mathcal{E}_0 |\alpha| = 2 \mathcal{E}_0 \sqrt{\bar{n}}$. The relative quantum uncertainty (noise-to-signal ratio) is:
+The peak electric field amplitude is $E_{\mathrm{peak}} = 2 \mathcal{E}_0 |\alpha| = 2 \mathcal{E}_0 \sqrt{\bar{n}}$. The relative quantum uncertainty (noise-to-signal ratio) is:
 
-   $$
-   \frac{\Delta E}{E_{\text{peak}}} = \frac{1}{2|\alpha|} = \frac{1}{2\sqrt{\bar{n}}} \longrightarrow 0 \quad (\text{as } \bar{n} \to \infty)
-   $$
+$$\frac{\Delta E}{E_{\mathrm{peak}}} = \frac{1}{2|\alpha|} = \frac{1}{2\sqrt{\bar{n}}} \to 0 \quad (\bar{n} \to \infty)$$
 
-   As the average photon number grows, the quantum fuzziness becomes an utterly negligible fraction of the macroscopic oscillation, recovering classical deterministic optics.
+As the average photon number grows, the quantum fuzziness becomes an utterly negligible fraction of the macroscopic oscillation, recovering classical deterministic optics.
 
 #### Simulation Output
 ![Classical Limit & Field Dynamics](figures/sim01_classical_limit_field_dynamics.png)
