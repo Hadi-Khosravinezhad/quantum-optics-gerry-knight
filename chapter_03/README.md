@@ -55,10 +55,10 @@ As the average photon number grows, the quantum fuzziness becomes an utterly neg
 * **Subplot (b) — Emergent Classical Limit ($|\alpha| = 5.0, \bar{n} = 25$):**
   * **Crimson Curve & Lightcoral Band:** As the excitation increases to $25$ photons, the field amplitude surges ($E_{\text{peak}} = 10\mathcal{E}_0$) while the uncertainty band remains pinned at $\pm \mathcal{E}_0$.
   * **Black Trajectory:** Individual measurement noise is now visibly constrained close to the classical trajectory, demonstrating how macroscopically stable laser fields emerge from microscopic photons.
-  * * **Subplot (c) — Mandel $Q$-Parameter Classification:**
-  * **Horizontal Navy Dashed Line ($Q = 0$):** Identifies coherent light as the universal benchmark boundary between classical and quantum optics.
-  * **Light Green Zone ($Q < 0$):** The forbidden classical region populated exclusively by non-classical states. The dotted green line at $Q = -1$ marks the absolute lower bound achieved by number states $|n\rangle$.
-  * **Misty Rose Zone ($Q > 0$):** The classical super-Poissonian domain. The solid firebrick curve illustrates how thermal wave noise scales linearly ($Q = \bar{n}$), drifting rapidly away from Poissonian coherence.
+* **Subplot (c) — Classical Limit Scaling (Noise-to-Signal Ratio vs. Intensity):**
+  * **Axes:** Double logarithmic plot of relative field fluctuations ($\Delta E / E_{\text{peak}}$) against the mean photon count $\bar{n} \in [0.1, 1000]$.
+  * **Dark Magenta Line:** Validates the theoretical power law $\frac{\Delta E}{E_{\text{peak}}} \propto \bar{n}^{-1/2}$.
+  * **Highlighted Dots:** Contrast the quantum-dominated simulation point ($|\alpha| = 1.5$, where noise is $\sim 33\%$ of the peak signal) against the semi-classical point ($|\alpha| = 5.0$, where noise drops to $10\%$). At $1000$ photons, noise falls below $1.5\%$.
  
  ---
  
@@ -107,8 +107,7 @@ $$P_n \approx \frac{1}{\sqrt{2\pi \bar{n}}} \exp\left[ -\frac{(n - \bar{n})^2}{2
   * **Blue Bars:** The discrete quantum Poisson probabilities $P_n$.
   * **Crimson Curve:** The continuous classical Gaussian probability density function $\mathcal{N}(\mu=\bar{n}, \sigma=\sqrt{\bar{n}})$.
   * **Physical Consequence:** At macroscopic excitation numbers, quantum discrete photon granularity smooths out smoothly into classical Gaussian intensity statistics.
-
-* **Subplot (c) — Classical Limit Scaling (Noise-to-Signal Ratio vs. Intensity):**
-  * **Axes:** Double logarithmic plot of relative field fluctuations ($\Delta E / E_{\text{peak}}$) against the mean photon count $\bar{n} \in [0.1, 1000]$.
-  * **Dark Magenta Line:** Validates the theoretical power law $\frac{\Delta E}{E_{\text{peak}}} \propto \bar{n}^{-1/2}$.
-  * **Highlighted Dots:** Contrast the quantum-dominated simulation point ($|\alpha| = 1.5$, where noise is $\sim 33\%$ of the peak signal) against the semi-classical point ($|\alpha| = 5.0$, where noise drops to $10\%$). At $1000$ photons, noise falls below $1.5\%$.
+* **Subplot (c) — Mandel $Q$-Parameter Classification:**
+  * **Horizontal Navy Dashed Line ($Q = 0$):** Identifies coherent light as the universal benchmark boundary between classical and quantum optics.
+  * **Light Green Zone ($Q < 0$):** The forbidden classical region populated exclusively by non-classical states. The dotted green line at $Q = -1$ marks the absolute lower bound achieved by number states $|n\rangle$.
+  * **Misty Rose Zone ($Q > 0$):** The classical super-Poissonian domain. The solid firebrick curve illustrates how thermal wave noise scales linearly ($Q = \bar{n}$), drifting rapidly away from Poissonian coherence.    
