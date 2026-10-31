@@ -55,6 +55,56 @@ As the average photon number grows, the quantum fuzziness becomes an utterly neg
 * **Subplot (b) — Emergent Classical Limit ($|\alpha| = 5.0, \bar{n} = 25$):**
   * **Crimson Curve & Lightcoral Band:** As the excitation increases to $25$ photons, the field amplitude surges ($E_{\text{peak}} = 10\mathcal{E}_0$) while the uncertainty band remains pinned at $\pm \mathcal{E}_0$.
   * **Black Trajectory:** Individual measurement noise is now visibly constrained close to the classical trajectory, demonstrating how macroscopically stable laser fields emerge from microscopic photons.
+ 
+  * ### 2. Photon Number Statistics & Mandel Q-Parameter
+**Reference:** Chapter 3 (*Coherent States*), Section 3.2: *Properties of Coherent States*
+
+#### The Physics & Mathematics
+In the Fock state basis $|n\rangle$, a Glauber coherent state $|\alpha\rangle$ is expressed as an infinite linear superposition:
+
+$$|\alpha\rangle = e^{-|\alpha|^2 / 2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle$$
+
+The probability of detecting exactly $n$ photons in the single-mode field follows by projection onto the Fock state $|n\rangle$:
+
+$$P_n = |\langle n | \alpha \rangle|^2 = e^{-|\alpha|^2} \frac{|\alpha|^{2n}}{n!} = e^{-\bar{n}} \frac{\bar{n}^n}{n!}$$
+
+where $\bar{n} = \langle \hat{n} \rangle = |\alpha|^2$ is the average photon number. This is an exact **Poisson distribution**, reflecting the independent and uncorrelated arrival of photons (shot noise).
+
+Computing the photon number variance:
+
+$$(\Delta n)^2 = \langle \hat{n}^2 \rangle - \langle \hat{n} \rangle^2 = \bar{n}$$
+
+For a Poissonian field, the variance is identically equal to the mean ($(\Delta n)^2 = \bar{n}$), yielding a fractional photon number uncertainty of $\frac{\Delta n}{\bar{n}} = \frac{1}{\sqrt{\bar{n}}}$.
+
+##### The Mandel $Q$-Parameter
+To benchmark and classify the quantum statistical nature of any optical field against shot noise, Leonard Mandel introduced the dimensionless parameter:
+
+$$Q = \frac{(\Delta n)^2 - \langle \hat{n} \rangle}{\langle \hat{n} \rangle} = \frac{(\Delta n)^2}{\bar{n}} - 1$$
+
+- **$Q = 0$ (Poissonian / Shot-Noise Limit):** Characteristic of ideal coherent states and stabilized lasers operating well above threshold.
+- **$Q > 0$ (Super-Poissonian / Wave Noise):** Typical of thermal and chaotic light ($(\Delta n)^2 = \bar{n} + \bar{n}^2 \implies Q = \bar{n} > 0$), where intensity fluctuations induce photon bunching.
+- **$-1 \le Q < 0$ (Sub-Poissonian / Purely Non-Classical):** Light with reduced intensity fluctuations below the shot-noise floor. For an ideal Fock state $|n\rangle$, the photon variance is strictly zero, attaining the fundamental quantum limit $Q = -1$ (anti-bunched light).
+
+##### The Gaussian Asymptotic Limit
+For macroscopic fields ($\bar{n} \gg 1$), Stirling's approximation transforms the discrete Poisson distribution into a continuous Gaussian distribution:
+
+$$P_n \approx \frac{1}{\sqrt{2\pi \bar{n}}} \exp\left[ -\frac{(n - \bar{n})^2}{2\bar{n}} \right]$$
+
+#### Simulation Output
+![Photon Statistics & Mandel Q-Parameter](figures/sim02_photon_statistics_mandel_q.png)
+
+#### Detailed Plot Guide & Analysis
+* **Subplot (a) — Poissonian Distribution Across Intensities:**
+  * **Asymmetric to Symmetric Transition:** At low photon numbers ($\bar{n} = 1$), the distribution is heavily skewed toward zero. As $\bar{n}$ increases ($4, 10, 20$), the peak shifts rightward to $n \approx \bar{n}$ and becomes increasingly bell-shaped and symmetric.
+  * **Absolute vs. Relative Width:** While the absolute variance $(\Delta n)^2 = \bar{n}$ expands with intensity, the relative spread $\Delta n / \bar{n} = 1/\sqrt{\bar{n}}$ contracts, sharpening the field's photon purity.
+* **Subplot (b) — Classical Gaussian Limit ($\bar{n} = 16$):**
+  * **Blue Bars:** The discrete quantum Poisson probabilities $P_n$.
+  * **Crimson Curve:** The continuous classical Gaussian probability density function $\mathcal{N}(\mu=\bar{n}, \sigma=\sqrt{\bar{n}})$.
+  * **Physical Consequence:** At macroscopic excitation numbers, quantum discrete photon granularity smooths out smoothly into classical Gaussian intensity statistics.
+* **Subplot (c) — Mandel $Q$-Parameter Classification:**
+  * **Horizontal Navy Dashed Line ($Q = 0$):** Identifies coherent light as the universal benchmark boundary between classical and quantum optics.
+  * **Light Green Zone ($Q < 0$):** The forbidden classical region populated exclusively by non-classical states. The dotted green line at $Q = -1$ marks the absolute lower bound achieved by number states $|n\rangle$.
+  * **Misty Rose Zone ($Q > 0$):** The classical super-Poissonian domain. The solid firebrick curve illustrates how thermal wave noise scales linearly ($Q = \bar{n}$), drifting rapidly away from Poissonian coherence.
 * **Subplot (c) — Classical Limit Scaling (Noise-to-Signal Ratio vs. Intensity):**
   * **Axes:** Double logarithmic plot of relative field fluctuations ($\Delta E / E_{\text{peak}}$) against the mean photon count $\bar{n} \in [0.1, 1000]$.
   * **Dark Magenta Line:** Validates the theoretical power law $\frac{\Delta E}{E_{\text{peak}}} \propto \bar{n}^{-1/2}$.
