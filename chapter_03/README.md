@@ -153,4 +153,63 @@ $$\langle n | \hat{\mathbb{I}}_R | n \rangle = \frac{1}{\pi} \int_{|\alpha| \le 
   * **Marker $d = 2$:** The overlap drops sharply to $1.8\%$. For $d \ge 3$, the overlap vanishes to $<0.01\%$, entering the quasi-orthogonal macroscopic regime.
 * **Subplot (c) — Numerical Demonstration of Completeness:**
   * **Convergence Curves:** Evaluates the completeness integral $\langle n | \hat{\mathbb{I}}_R | n \rangle$ as a function of the phase-space integration radius $R$ for target Fock states $|0\rangle$, $|1\rangle$, and $|2\rangle$.
-  * **Black Dashed Line ($\hat{\mathbb{I}} = 1.0$):** Demonstrates that as $R \ge 3$, the integral rapidly saturates to unity, providing rigorous numerical proof that coherent states span the complete Hilbert space.  
+  * **Black Dashed Line ($\hat{\mathbb{I}} = 1.0$):** Demonstrates that as $R \ge 3$, the integral rapidly saturates to unity, providing rigorous numerical proof that coherent states span the complete Hilbert space.
+  * 
+ ---
+  ### 4. Phase-Space Quasi-Probability Distributions: Husimi Q, Wigner W & Schrödinger Cat
+**Reference:** Chapter 3 (*Coherent States*), Section 3.6: *Phase-space pictures of coherent states* & Section 3.7: *Density operators and phase-space probability distributions*
+
+#### The Physics & Mathematics
+Because the quantum quadrature operators do not commute ($[\hat{x}, \hat{p}] = \frac{i}{2}$), a classical joint probability distribution $P(x, p)$ is strictly forbidden by Heisenberg's uncertainty principle. Quantum optics circumvents this by mapping quantum states onto **quasi-probability distributions** in optical phase space $\alpha = x + ip$.
+
+##### 1. The Husimi $Q$-Function
+The Husimi $Q$-distribution represents the expectation value of the density operator in the coherent state basis:
+
+$$Q(\alpha) = \frac{1}{\pi} \langle \alpha | \hat{\rho} | \alpha \rangle$$
+
+- **Positive-Definite:** Because $\langle \alpha | \hat{\rho} | \alpha \rangle \ge 0$, $Q(\alpha)$ is always strictly non-negative ($0 \le Q(\alpha) \le \frac{1}{\pi}$).
+- **Coherent State:** For a pure coherent state $|\alpha_0\rangle$, the $Q$-function is a symmetric 2D Gaussian centered at $\alpha_0$ with variance $\sigma^2 = \frac{1}{2}$:
+
+$$Q(\alpha) = \frac{1}{\pi} \exp\left( -|\alpha - \alpha_0|^2 \right)$$
+
+##### 2. The Wigner $W$-Distribution
+Introduced by Eugene Wigner (1932), the Wigner function provides an exact phase-space Weyl-ordered representation of $\hat{\rho}$:
+
+$$W(x, p) = \frac{1}{\pi} \int_{-\infty}^{\infty} \langle x - y | \hat{\rho} | x + y \rangle e^{2ipy} \, dy$$
+
+- **Marginal Distributions:** Integrating $W(x, p)$ along one quadrature axis yields the true quantum probability density of the conjugate quadrature: $\int W(x, p) \, dp = |\psi(x)|^2$ and $\int W(x, p) \, dx = |\phi(p)|^2$.
+- **Coherent State:** For $|\alpha_0\rangle$, the Wigner function is a Gaussian with minimum-uncertainty width $\sigma^2 = \frac{1}{4}$:
+
+$$W(\alpha) = \frac{2}{\pi} \exp\left( -2 |\alpha - \alpha_0|^2 \right)$$
+
+##### 3. The Macroscopic Quantum Superposition (Schrödinger Cat State)
+To reveal the profound difference between $Q$ and $W$, consider an **even coherent state (Schrödinger cat)** formed by a quantum superposition of two distinct coherent states with opposite optical phases:
+
+$$|\psi_{\mathrm{cat}}\rangle = \mathcal{N} \left( |\alpha_0\rangle + |-\alpha_0\rangle \right), \quad \mathcal{N} = \frac{1}{\sqrt{2 + 2e^{-2|\alpha_0|^2}}}$$
+
+The corresponding Wigner function decomposes into two classical-like peaks plus an interference cross-term:
+
+$$W_{\mathrm{cat}}(\alpha) = \mathcal{N}^2 \left[ W_{+\alpha_0}(\alpha) + W_{-\alpha_0}(\alpha) + 2 W_{\mathrm{interf}}(\alpha) \right]$$
+
+For a real displacement $\alpha_0 = x_0$:
+
+$$W_{\mathrm{interf}}(x, p) = \frac{2}{\pi} \exp\left[ -2(x^2 + p^2) \right] \cos(4 x_0 p)$$
+
+##### Physical Consequence: Non-Classical Negativity
+At the phase-space origin ($x = 0$), the cosine oscillation forces the Wigner function to plunge into **negative values ($W_{\mathrm{cat}} < 0$)**. The negativity of the Wigner function is the definitive, incontrovertible witness of macroscopic quantum coherence and interference, whereas the Husimi $Q$-distribution completely smooths out these rapid sub-Planck interference fringes.
+
+#### Simulation Output
+![Phase Space Distributions](figures/sim04_phase_space_wigner_husimi.png)
+
+#### Detailed Plot Guide & Analysis
+* **Subplot (a) — Coherent State Husimi $Q(x, p)$:**
+  * **Gaussian Profile:** An isotropic circular bell centered at $x_0 = 2.0, p_0 = 0.0$.
+  * **Excess Smoothing:** The distribution has width $\sigma = 1/\sqrt{2}$, reflecting the additional convolution with vacuum noise inherent to simultaneous quadrature measurements.
+* **Subplot (b) — Coherent State Wigner $W(x, p)$:**
+  * **Minimum-Uncertainty Disk:** Also strictly positive, but twice as sharp ($\sigma = 1/2$) as the $Q$-function, directly matching the Heisenberg minimum uncertainty disk.
+* **Subplot (c) — Schrödinger Cat Husimi $Q_{\mathrm{cat}}(x, p)$:**
+  * **Two Classical Peaks:** Shows two separated Gaussian hills corresponding to the "alive" ($|\alpha_0\rangle$) and "dead" ($|-\alpha_0\rangle$) macroscopic states.
+  * **Absence of Fringes:** Because $Q(\alpha)$ is bounded by positive semi-definiteness, it fails to display the rapid quantum interference between the two states.
+* **Subplot (d) — Schrödinger Cat Wigner $W_{\mathrm{cat}}(x, p)$:**
+  * **The Quantum Interference Heartbeat:** Located midway between the two classical peaks at $x = 0$, rapid high-frequency oscillations appear along the momentum axis $p$.
+  * **Blue Shaded Regions ($W < 0$):** Highlighted with the diverging colormap and dashed zero-contour lines. These negative basins represent quantum interference that cannot be explained by any classical probability distribution, illustrating the macroscopic quantum cat paradox.
