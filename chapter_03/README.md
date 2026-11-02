@@ -127,7 +127,7 @@ The transition probability (quantum overlap fidelity) is given by:
 $$|\langle \beta | \alpha \rangle|^2 = \exp\left( -|\alpha - \beta|^2 \right)$$
 
 ##### Key Physical Consequences:
-1. **Fundamental Non-Orthogonality:** Because $|\langle \beta | \alpha \rangle|^2 > 0$ for any finite complex amplitudes $\alpha$ and $\beta$, no quantum measurement can discriminate between two coherent states with $100\%$ determinism. This non-orthogonality constitutes the physical foundation of continuous-variable quantum key distribution (CV-QKD) and the B92 protocol.
+1. **Fundamental Non-Orthogonality:** Because $|\langle \beta | \alpha \rangle|^2 > 0$ for any finite complex amplitudes $\alpha$ and $\beta$, no quantum measurement can discriminate between two coherent states with $100\%$ determinism.
 2. **Quasi-Orthogonality:** The overlap decays exponentially with the squared Euclidean distance in phase space ($d^2 = |\alpha - \beta|^2$). When the separation satisfies $|\alpha - \beta| \ge 3$, the overlap falls below $e^{-9} \approx 1.23 \times 10^{-4}$, rendering the states practically distinguishable.
 3. **Overcompleteness & Resolution of the Identity:**  
    Because coherent states are non-orthogonal, they form an overcomplete basis set. The resolution of the identity operator is expressed as an integral over the entire complex plane:
